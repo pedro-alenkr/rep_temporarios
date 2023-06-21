@@ -7,5 +7,7 @@ namespace Api.Properties
         public dbcontext(DbContextOptions<dbcontext> options) : base(options){}
 
         public DbSet<Models.UsersModel> Users { get; set; }
+
+        public DbSet<Models.ProductsModel> Products { get; set; }
     }
 }

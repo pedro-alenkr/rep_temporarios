@@ -2,25 +2,25 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Api.Models
 {
-    [Table("Users")]
+    [Table("users")]
     public class UsersModel
     {
-        [Column("Id")]
+        [Column("id")]
         public long Id { get; set; }
 
-        [Column("Name")]
+        [Column("nome")]
         public string Name { get; set; } = string.Empty;
 
-        [Column("Password")]
+        [Column("senha")]
         public string Password { get; set; } = string.Empty;
 
-        [Column("Email")]
+        [Column("email")]
         public string Email { get; set; } = string.Empty;
 
-        [Column("PhoneNumber")]
+        [Column("telefone")]
         public string PhoneNumber { get; set; } = string.Empty;
 
-        [Column("UserType")]
+        [Column("usertype")]
         public int UserType { get; set; }
     }
 }

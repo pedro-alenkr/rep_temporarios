@@ -106,11 +106,70 @@ namespace Api.Controllers
             return user;
         }
 
-        private object GetUserList(string stringInput)
+        private object GetUsers(string stringInput)
         {
             List<UsersModel> users = ApiDAO.GetUsers();
             
             return users;
+        }
+
+        private object CreateProduct(string stringInput)
+        {
+            JsonProduct? jsonCreateProduct = JsonSerializer.Deserialize<JsonProduct>(stringInput);
+
+            if(!ModelState.IsValid||jsonCreateProduct == null) return BadRequest();
+        
+            ProductsModel product = Mapper.JsonProductToModel(jsonCreateProduct);
+
+            Validator.ExecuteValidator(ApiDAO, product);
+            
+            ApiDAO.Create(product);
+
+            return jsonCreateProduct;
+        }
+
+        private object UpdateProduct(string stringInput)
+        {
+            JsonProduct? jsonUpdateProduct = JsonSerializer.Deserialize<JsonProduct>(stringInput);
+
+            if(!ModelState.IsValid||jsonUpdateProduct == null) return BadRequest();
+            
+            ProductsModel product = Mapper.JsonProductToModel(jsonUpdateProduct);
+            
+            Validator.ExecuteValidator(ApiDAO, product);
+
+            ApiDAO.Update(product);
+
+            return Ok();
+        }
+
+        private object DeleteProduct(string stringInput)
+        {
+            JsonProduct? jsonProduct = JsonSerializer.Deserialize<JsonProduct>(stringInput);
+
+            if(!ModelState.IsValid || jsonProduct == null) return BadRequest();
+
+            ApiDAO.DeleteProductById(jsonProduct.Id);
+
+            return Ok();
+        }
+
+        private object GetProductByName(string stringInput)
+        {
+            JsonProduct? jsonProduct = JsonSerializer.Deserialize<JsonProduct>(stringInput);
+
+            if(!ModelState.IsValid || jsonProduct == null || jsonProduct.Name == null) return BadRequest();
+
+            List<ProductsModel> product = ApiDAO.GetProductsByName(jsonProduct.Name);
+            
+            return product;
+        }
+
+        private object GetProducts(string stringInput)
+        {
+            List<ProductsModel> products = ApiDAO.GetProducts();
+            
+            return products;
         }
     }
 }

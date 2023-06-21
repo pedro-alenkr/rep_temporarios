@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="EXC0001" xml:space="preserve">
-    <value>stakeholder não existe no banco</value>
+    <value>produto não existe no banco</value>
     <comment/>
   </data>
   <data name="EXC0002" xml:space="preserve">
-    <value>já existe um stakeholder com mesmos dados pessoais cadastrados</value>
+    <value>produto já cadastrado</value>
     <comment/>
   </data>
   <data name="EXC0003" xml:space="preserve">

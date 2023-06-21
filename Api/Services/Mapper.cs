@@ -17,5 +17,17 @@ namespace Api.Services
             }; 
             return user;
         }
+
+        public static ProductsModel JsonProductToModel(JsonProduct json)
+        {
+            ProductsModel product = new ProductsModel()
+            {
+                Name = json.Name,
+                Value = json.Value,
+                Amount = json.Amount,
+                Description = json.Description,
+            }; 
+            return product;
+        }
     }
 }

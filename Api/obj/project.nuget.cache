@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PACgf/wsBo1TxyRjZ+7HOK+5mN909ZTL5wTjfs8CHwjt+nuD7omCLATbMJ5PW35w9Tn7X76LiO9Ocp9eNEqmgg==",
+  "dgSpecHash": "SUXi1yICqiYsrureHIp9xqClwbmrXtOr5rBufET6GzkHm2ispCBRp1RJ0UByhxoyr0h49P4zK0o/XAu6GWzoJA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Pedro\\Desktop\\Api\\Api.csproj",
+  "projectFilePath": "C:\\Users\\Pedro\\Documents\\GitHub\\rep-temporarios\\Api\\Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Pedro\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.0\\microsoft.entityframeworkcore.7.0.0.nupkg.sha512",
     "C:\\Users\\Pedro\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.0\\microsoft.entityframeworkcore.abstractions.7.0.0.nupkg.sha512",
