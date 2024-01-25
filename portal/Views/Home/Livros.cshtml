@@ -1,0 +1,67 @@
+﻿@model List<LivroModel>
+@{
+    ViewData["Title"] = "Esse eu já li!";
+}
+
+<div id="LivroModal" hidden></div>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!--cabeçalho padrao-->
+    <section class="content-header">
+        <ol class="breadcrumb">
+            <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Pesquisa</li>
+        </ol>
+        <h1>Pesquisa</h1>
+        <small>Procure por livros para ler.</small>
+    </section>
+
+    <!--conteudo-->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-default">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Livros</h3>
+                    </div>
+
+                    <div class="box-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover">
+                                <thead>
+                                    <tr class="active">
+                                        <th>Nome</th>
+                                        <th>Estilo</th>
+                                        <th>Pontos</th>
+                                        <th>Sinopse</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach(LivroModel livro in Model)
+                                    {
+                                        <tr>
+                                            <td>@livro.Nome</td>
+                                            <td>@livro.Estilo</td>
+                                            <td>@livro.Pontos</td>
+                                            <td>@livro.Sinopse</td>
+                                            <td>
+                                                <button type="button" onclick="MarcarLido(@livro.Id)" class="btn btn-default">
+                                                    Marcar Lido
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="~/js/Scripts/Livros.js"></script>
